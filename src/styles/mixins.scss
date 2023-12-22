@@ -1,0 +1,76 @@
+@mixin buttonContainer {
+  width: 20rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin tabButton {
+  display: flex;
+  align-items: center;
+  height: 3rem;
+  margin-inline: 1rem;
+  padding: 0.5rem 1rem;
+  color: $black;
+  border-bottom: 3px solid transparent;
+
+  svg {
+    padding-right: 5px;
+  }
+}
+
+@mixin button {
+  display: flex;
+  align-items: center;
+  height: 3rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  color: $black;
+
+  &:active {
+    transform: scale(95%);
+  }
+
+  svg {
+    padding-right: 5px;
+  }
+}
+
+@mixin dropdown {
+  display: flex;
+  flex-direction: column;
+
+  .wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 10rem;
+    height: 3.5rem;
+    border: 2px solid $gray;
+    border-radius: 0.25rem;
+  
+    .content {
+      width: 75%;
+      padding: 0.25rem 0rem 0.25rem 1rem;
+    }
+  
+    svg {
+      margin: 0.75rem;
+    }
+  }
+
+  .options {
+    background: white;
+    border: 2px solid $gray;
+    border-radius: 0.25rem;
+    position: relative;
+  
+    ul {
+      list-style-type: none;
+  
+      li {
+        padding: 0.75rem;
+      }
+    }
+  }
+}

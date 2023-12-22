@@ -14,7 +14,7 @@ export const DownArrowSVG = (props: SVGProps<any>) => (
       stroke-width="1.5"
       stroke-linecap="round"
       stroke-linejoin="round"
-      fill={props.color || "black"}
+      fill="none"
     />
   </svg>
 );

@@ -1,4 +1,13 @@
-import { SelectHTMLAttributes } from "react";
+export interface SearchOption {
+  id: string,
+  content: string,
+}
 
-export interface DropDownProps
-  extends SelectHTMLAttributes<HTMLSelectElement> {}
+export interface DropDownProps {
+  id: string;
+  forSearchMode?: string;
+  direction?: SearchOption;
+  setDirection?: (direction: SearchOption) => void;
+  flightClass?: SearchOption;
+  setFlightClass?: (flightClass: SearchOption) => void;
+}

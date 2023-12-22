@@ -1,5 +1,15 @@
+@import '../../styles/mixins.scss';
+
 .searchbar {
   display: flex;
   justify-content: space-evenly;
   margin-top: 3rem;
+}
+
+.container {
+  @include buttonContainer;
+  margin-top: 2rem;
+  padding-right: .75rem;
+  width: 100%;
+  justify-content: end;
 }

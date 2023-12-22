@@ -1,28 +1,11 @@
 @import "../../../styles/theme.scss";
+@import '../../../styles/mixins.scss';
 
 .inactiveTab {
-  display: flex;
-  align-items: center;
-  height: 3rem;
-  margin-inline: 1rem;
-  padding: 0.5rem 1rem;
-  color: $black;
-
-  svg {
-    padding-right: 5px;
-  }
+  @include tabButton;
 }
 
 .activeTab {
-  display: flex;
-  align-items: center;
-  height: 3rem;
-  margin-inline: 1rem;
-  padding: 0.5rem 1rem;
+  @include tabButton;
   border-bottom: 3px solid $purple;
-  color: $black;
-
-  svg {
-    padding-right: 5px;
-  }
 }

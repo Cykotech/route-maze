@@ -1,29 +1,55 @@
+"use client";
+
+import { useState } from "react";
 import { Button, TabButton } from "@components/Buttons";
+import { SearchBar } from "@components/SearchBar";
 
 import { Footer } from "@/components/Footer";
 import { HotelSVG } from "@/assets/svg/Hotel";
 import { PlaneSVG } from "@/assets/svg/Plane";
-import { SearchBar } from "@components/SearchBar";
-import { roboto } from "../lib/fonts";
+
 import styles from "./page.module.scss";
 
 export default function Home() {
+  const [mode, SetMode] = useState("flight");
+  const [flightTabActive, SetFlight] = useState(true);
+  const [hotelTabActive, SetHotel] = useState(false);
+
+  function changeToFlightMode() {
+    if (!flightTabActive) {
+      SetFlight(true);
+      SetHotel(false);
+      SetMode("flight");
+    }
+  }
+  
+  function changeToHotelMode() {
+    if (!hotelTabActive) {
+      SetFlight(false);
+      SetHotel(true);
+      SetMode("hotel");
+    }
+  }
+
   return (
     <main className={styles.main}>
+      <div className={styles.test}><p>Some features may not work as intended during development stage.</p></div>
       <div className={styles.banner}>
         <header className={styles.header}>
-          <div className={styles.buttonContainer}>
+          <div className={styles.linkContainer}>
             <Button>
-              <PlaneSVG color="white" /> Flight
+              <PlaneSVG color="black" />
+              Find Flights
             </Button>
             <Button>
-              <HotelSVG color="white" /> Hotels
+              <HotelSVG color="black" />
+              Find Hotels
             </Button>
           </div>
           <h1>RouteMaze</h1>
-          <div className={styles.buttonContainer}>
+          <div className={styles.accountContainer}>
             <Button>Login</Button>
-            <Button buttonType="secondary">Register</Button>
+            <Button buttonType="white">Register</Button>
           </div>
         </header>
         <div className={styles.textContainer}>
@@ -33,18 +59,22 @@ export default function Home() {
         </div>
       </div>
       <div className={styles.searchContainer}>
-        <div className={styles.buttonContainer}>
-          <TabButton>
+        <div className={styles.searchmodeContainer}>
+          <TabButton
+            active={flightTabActive}
+            handleClick={changeToFlightMode}>
             <PlaneSVG color="black" />
             Flights
           </TabButton>
           <div className={styles.border}></div>
-          <TabButton>
+          <TabButton
+            active={hotelTabActive}
+            handleClick={changeToHotelMode}>
             <HotelSVG color="black" />
-            Hotel
+            Hotels
           </TabButton>
         </div>
-        <SearchBar />
+        <SearchBar mode={mode} />
       </div>
       <Footer />
     </main>

@@ -1,66 +1,43 @@
 @import "../../../styles/theme.scss";
+@import "../../../styles/mixins.scss";
 
 .button {
   &--primary {
-    display: flex;
-    align-items: center;
-    height: 3rem;
-    padding: 0.5rem 1rem;
-    border-radius: 0.25rem;
-    border: 1px solid $purple;
-    color: $white;
 
-    svg {
-      padding-right: 5px;
-    }
+    @include button;
+
+    border: 1px solid $purple;
+
 
     &:hover {
       background-color: $purple;
-    }
-
-    &:active {
-      transform: scale(95%);
+      color: $white;
     }
   }
 
-  &--secondary {
-    height: 3rem;
-    padding: 0.5rem 1rem;
-    border-radius: 0.25rem;
+
+  &--white {
+    @include button;
+
     background-color: $white;
 
     &:hover {
       background-color: $purple;
       color: $white;
     }
+  }
 
-    &:active {
-      transform: scale(95%);
+
+  &--colored {
+    @include button;
+    background-color: $purple;
+    border: 2px solid $purple;
+    color: $white;
+
+
+    &:hover {
+      background-color: white;
+      color: $black;
     }
-  }
-}
-
-.inactiveTab {
-  display: flex;
-  align-items: center;
-  height: 3rem;
-  padding: 0.5rem 1rem;
-  color: $black;
-
-  svg {
-    padding-right: 5px;
-  }
-}
-
-.activeTab {
-  display: flex;
-  align-items: center;
-  height: 3rem;
-  padding: 0.5rem 1rem;
-  border-bottom: 3px solid $purple;
-  color: $black;
-
-  svg {
-    padding-right: 5px;
   }
 }

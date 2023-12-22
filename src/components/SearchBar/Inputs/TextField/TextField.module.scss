@@ -11,21 +11,15 @@
 
 .input {
   border: none;
-  color: #1c1b1f;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  padding: 0px 16px;
+
+  text-align: center;
+  
+  &:focus-visible {
+    outline: none;
+  }
+
 }
 
-.withoutLabel {
-  height: 100%;
-}
-
-.input:focus-visible {
-  outline: none;
-}
 
 .label {
   width: fit-content;

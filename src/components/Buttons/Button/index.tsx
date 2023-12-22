@@ -1,18 +1,14 @@
-import { ButtonProps } from "./Button.types";
+import { ButtonProps } from "../Button.types";
 import styles from "./button.module.scss";
 
 export const Button = ({
   children,
   buttonType = "primary",
-  className,
-  ...props
+
+  handleClick,
 }: ButtonProps) => {
   return (
-    <button
-      className={`${styles[`button--${buttonType}`]} ${className}`}
-      {...props}
-    >
-      {children}
-    </button>
+    <button className={styles[`button--${buttonType}`]} onClick={handleClick}>{children}</button>
+
   );
 };
