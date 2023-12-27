@@ -4,11 +4,11 @@ import styles from "./TextField.module.scss";
 export const TextField = ({
   label,
   id,
-
+  value,
   placeholder,
+  handleChange,
   ...props
 }: TextFieldProps) => {
-  const { value, handleChange } = props;
   const inputElementType = (id: string) => {
     const idsForNumberInput = ["passengers", "guests", "rooms"];
     const idsForTextInput = ["from", "to", "destination"];
@@ -28,25 +28,24 @@ export const TextField = ({
   };
 
   return (
-    <div className={`${styles.inputContainer} ${className}`} {...props}>
+    <div className={`${styles.inputContainer} ${styles.input}`}>
       {label && (
-        <label htmlFor={label} className={styles.label} {...labelProps}>
+        <label
+          htmlFor={label}
+          className={styles.label}>
           {label}
         </label>
       )}
       <input
-
         className={styles.input}
         type={inputElementType(id)}
         placeholder={placeholder}
         value={value}
-        onKeyDown={() => {
-          handleChange;
-          console.log(value);
+        onChange={(e) => {
+          handleChange(e.target.value);
         }}
         min="1"
         max="10"></input>
-
     </div>
   );
 };

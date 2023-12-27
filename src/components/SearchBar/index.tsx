@@ -1,28 +1,41 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
+
+import { useSearchBarStore } from "@/stores/searchbarStore";
 
 import { DropDown } from "./Inputs/DropDown";
 import { TextField } from "./Inputs/TextField";
 import { Button } from "../Buttons";
-// import { tempSearchAlert } from "../../util/utilities";
+import {
+  tempFlightSearchAlert,
+  tempHotelSearchAlert,
+} from "../../util/utilities";
 
 import { SearchBarProps } from "./SearchBar.types";
+import { SearchOption } from "./Inputs/DropDown/DropDown.types";
 
 import { PointerSVG } from "@/assets/svg/Pointer";
 
 import styles from "./searchbar.module.scss";
 
 export const SearchBar = ({ mode }: SearchBarProps) => {
-  const [direction, setDirection] = useState({
-    id: "oneWay",
-    content: "One Way",
-  });
-  const [flightClass, setFlightClass] = useState({
-    id: "economy",
-    content: "Economy",
-  });
-  const [destination, setDestination] = useState("");
-  const [date1, setDate1] = useState("");
-  const [date2, setDate2] = useState("");
+  const {
+    origin,
+    updateOrigin,
+    destination,
+    updateDestination,
+    direction,
+    updateDirection,
+    date1,
+    updateDate1,
+    date2,
+    updateDate2,
+    people,
+    updatePeople,
+    rooms,
+    updateRooms,
+    flightClass,
+    updateFlightClass,
+  } = useSearchBarStore((state) => state);
 
   // const today = new Date();
 
@@ -37,59 +50,119 @@ export const SearchBar = ({ mode }: SearchBarProps) => {
   //   setDate2(minEndDate);
   // }, [today]);
 
+  useEffect(() => {
+    if (direction.id === "oneWay") {
+    }
+
+    if (direction.id === "roundTrip" || mode === "hotel") {
+    }
+  }, [direction, mode]);
+
+  function buildFlightSearch(
+    origin: string,
+    destination: string,
+    direction: SearchOption,
+    people: number,
+    flightClass: SearchOption,
+    date1: string,
+    date2?: string
+  ) {
+    const flightSearch = {
+      origin,
+      destination,
+      direction,
+      people,
+      flightClass,
+      date1,
+      date2,
+    };
+    tempFlightSearchAlert(mode, flightSearch);
+  }
+
+  function buildHotelSearch(
+    destination: string,
+    people: number,
+    date1: string,
+    date2: string,
+    rooms: number
+  ) {
+    const hotelSearch = {
+      destination,
+      people,
+      date1,
+      date2,
+      rooms,
+    };
+    tempHotelSearchAlert(mode, hotelSearch);
+  }
+
   if (mode === "flight") {
     return (
       <>
         <div className={styles.searchbar}>
-          {/* <TextField
+          <TextField
             placeholder="NYC, New York"
-            id="from"
+            id="origin"
             label="Origin"
-          /> */}
+            value={origin}
+            handleChange={updateOrigin}
+          />
           <TextField
             placeholder="Los Angeles, California"
             id="destination"
             label="Destination"
             value={destination}
-            handleChange={setDestination}
+            handleChange={updateDestination}
           />
           <DropDown
             id="trip-direction"
             direction={direction}
-            setDirection={setDirection}
+            setDirection={updateDirection}
           />
           <TextField
             placeholder="1/1/2023"
             id="date1"
             label="Departure Date"
             value={date1}
-            handleChange={setDate1}
+            handleChange={updateDate1}
           />
           <TextField
             placeholder="1/1/2023"
             id="date2"
             label="Return Date"
             value={date2}
-            handleChange={setDate2}
+            handleChange={updateDate2}
           />
-          {/* <TextField
+          <TextField
             placeholder="1"
             id="passengers"
-            label="Number of Passengers"
-          /> */}
+            label="Passengers"
+            value={people}
+            handleChange={updatePeople}
+          />
           <DropDown
             id="flight-class"
             flightClass={flightClass}
-            setFlightClass={setFlightClass}
+            setFlightClass={updateFlightClass}
           />
         </div>
         <div className={styles.container}>
-          {/* <Button
+          <Button
             buttonType="colored"
-            handleClick={tempSearchAlert}>
+            handleClick={() =>
+              buildFlightSearch(
+                origin,
+                destination,
+                direction,
+                people,
+                flightClass,
+                date1,
+                date2
+              )
+            }>
             <PointerSVG />
             Search
-          </Button> */}
+          </Button>
         </div>
       </>
     );
@@ -103,32 +176,44 @@ export const SearchBar = ({ mode }: SearchBarProps) => {
             id="destination"
             label="Destination"
             value={destination}
-            handleChange={setDestination}
+            handleChange={updateDestination}
           />
-          {/* <TextField
+          <TextField
             placeholder="1/1/2023"
             id="date1"
             label="Check In Date"
-          /> */}
-          {/* <TextField
+            value={date1}
+            handleChange={updateDate1}
+          />
+          <TextField
             placeholder="1/1/2023"
             id="date2"
             label="Check Out Date"
-          /> */}
-          {/* <TextField
+            value={date2}
+            handleChange={updateDate2}
+          />
+          <TextField
             placeholder="1"
             id="guests"
             label="Number of Guests"
-          /> */}
-          {/* <TextField
+            value={people}
+            handleChange={updatePeople}
+          />
+          <TextField
             placeholder="1"
             id="rooms"
             label="Number of Rooms"
-          /> */}
+            value={rooms}
+            handleChange={updateRooms}
+          />
         </div>
         <div className={styles.container}>
-          <Button buttonType="colored">
-            {/* <PointerSVG /> */}
+          <Button
+            buttonType="colored"
+            handleClick={() =>
+              buildHotelSearch(destination, people, date1, date2, rooms)
+            }>
+            <PointerSVG />
             Search
           </Button>
         </div>

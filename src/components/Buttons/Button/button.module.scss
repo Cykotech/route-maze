@@ -12,6 +12,15 @@
     &:hover {
       background-color: $purple;
       color: $white;
+
+      svg {
+        fill: $white;
+      }
+    }
+
+    svg {
+      width: fit-content;
+      fill: $black;
     }
   }
 
@@ -38,6 +47,16 @@
     &:hover {
       background-color: white;
       color: $black;
+
+      svg {
+        fill: $black;
+      }
+    }
+
+    svg {
+      width: fit-content;
+      padding-right: 10px;
+      fill: white;
     }
   }
 }

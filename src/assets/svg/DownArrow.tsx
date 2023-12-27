@@ -11,9 +11,9 @@ export const DownArrowSVG = (props: SVGProps<any>) => (
     <path
       d="M1.25 1L8 7.75L14.75 1"
       stroke="black"
-      stroke-width="1.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       fill="none"
     />
   </svg>

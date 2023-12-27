@@ -15,7 +15,9 @@
   border-bottom: 3px solid transparent;
 
   svg {
+    width: fit-content;
     padding-right: 5px;
+    fill: $black;
   }
 }
 
