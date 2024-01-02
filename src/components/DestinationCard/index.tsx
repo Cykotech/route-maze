@@ -3,13 +3,14 @@ import styles from "./destination.module.scss";
 
 import { imageMap } from "./destinations";
 
-import { Destination } from "./destination.types";
+import { Destination, ImageMap } from "./destination.types";
 
 export default function DestinationCard({ id, alt, content }: Destination) {
+  const images: ImageMap = imageMap;
   return (
     <div className={styles.card}>
       <Image
-        src={imageMap[id]}
+        src={images[id]}
         alt={alt}
         width={300}
         height={300}></Image>

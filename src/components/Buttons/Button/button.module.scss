@@ -25,10 +25,10 @@
   }
 
 
-  &--accent-text {
+  &--white {
     @include button;
 
-    background-color: $accent-text;
+    background-color: white;
 
     &:hover {
       background-color: $primary;
@@ -45,7 +45,7 @@
 
 
     &:hover {
-      background-color: accent-text;
+      background-color: white;
       color: $primary-text;
 
       svg {
@@ -56,7 +56,7 @@
     svg {
       width: fit-content;
       padding-right: 10px;
-      fill: accent-text;
+      fill: white;
     }
   }
 }
