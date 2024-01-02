@@ -13,7 +13,7 @@
 .main {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
 }
 
 
@@ -71,14 +71,14 @@
 }
 
 .searchContainer {
-  width: fit-content;
+  width: 90rem;
   margin: 0 auto;
   padding: 1rem 2rem 2rem;
   position: relative;
   top: -5rem;
   background-color: white;
   border-radius: 1rem;
-  box-shadow: 0px 4px 16px 0px $gray;
+  box-shadow: 0px 4px 16px 0px $accent;
 
   .searchmodeContainer {
     @include buttonContainer;
@@ -87,8 +87,38 @@
     .border {
       width: 2px;
       height: 2rem;
-      background-color: $black;
+      background-color: $primary-text;
       opacity: 50%;
     }
+  }
+}
+
+.destinationContainer {
+  margin-top: 5rem;
+  width: 77rem;
+  
+  .destinationHeader {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.5rem;
+
+    h2 {
+      width: fit-content;
+      font-size: 2rem;
+    }
+
+    p {
+      margin-top: 1rem;
+      width: fit-content;
+      font-size: 1rem;
+    }
+  }
+
+  .cardContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
   }
 }

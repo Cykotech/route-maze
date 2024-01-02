@@ -1,8 +1,11 @@
+/* eslint-disable react/jsx-key */
 "use client";
 
 import { useState } from "react";
 import { Button, TabButton } from "@components/Buttons";
 import { SearchBar } from "@components/SearchBar/index";
+import DestinationCard from "@components/DestinationCard/index";
+import { destinationsArray } from "../components/DestinationCard/destinations";
 
 import { HotelSVG } from "@/assets/svg/Hotel";
 import { PlaneSVG } from "@/assets/svg/Plane";
@@ -76,6 +79,27 @@ export default function Home() {
           </TabButton>
         </div>
         <SearchBar mode={mode} />
+      </div>
+      <div className={styles.destinationContainer}>
+        <div className={styles.destinationHeader}>
+          <div className="textContainer">
+            <h2>Plan Your Perfect Trip</h2>
+            <p>Search Flights & Hotels for your dream vacation destination</p>
+          </div>
+          <Button>See More Places</Button>
+        </div>
+        <div className={styles.cardContainer}>
+          {destinationsArray.map((destination) => {
+            return (
+              <DestinationCard
+                id={destination.id}
+                alt={destination.alt}
+                content={destination.content}
+                key={destination.id}
+              />
+            );
+          })}
+        </div>
       </div>
     </main>
   );

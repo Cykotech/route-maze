@@ -11,13 +11,13 @@
   height: 3rem;
   margin-inline: 1rem;
   padding: 0.5rem 1rem;
-  color: $black;
+  color: $primary-text;
   border-bottom: 3px solid transparent;
 
   svg {
     width: fit-content;
     padding-right: 5px;
-    fill: $black;
+    fill: $primary-text;
   }
 }
 
@@ -27,7 +27,7 @@
   height: 3rem;
   padding: 0.5rem 1rem;
   border-radius: 0.25rem;
-  color: $black;
+  color: $primary-text;
 
   &:active {
     transform: scale(95%);
@@ -48,7 +48,7 @@
     align-items: center;
     width: 10rem;
     height: 3.5rem;
-    border: 2px solid $gray;
+    border: 2px solid $accent;
     border-radius: 0.25rem;
   
     .content {
@@ -63,7 +63,7 @@
 
   .options {
     background: white;
-    border: 2px solid $gray;
+    border: 2px solid $accent;
     border-radius: 0.25rem;
     position: relative;
   

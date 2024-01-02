@@ -1,15 +1,11 @@
-:root {
-  --primary-purple: hsl(295, 100%, 16%);
-  --primary-black: hsl(274, 3%, 15%);
-  --primary-white: hsl(47, 23%, 88%);
-}
+@import "../styles/theme.scss";
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: var(--font-monserrat);
-  color: var(--primary-black);
+  color: $primary-text;
 
   button {
     border: none;
@@ -20,9 +16,56 @@
     cursor: pointer;
     outline: none;
   }
+
   ul {
     padding: 0px;
     margin: 0px;
     list-style: none;
+  }
+}
+
+footer {
+  background-color: $primary;
+  padding: 4rem 6.5rem;
+  display: flex;
+  
+  .companyContainer {
+    display: flex;
+    flex-direction: column;
+    width: 7.5rem;
+    margin-right: 8.75rem;
+    
+    p {
+      font-size: 1.3rem;
+      margin-bottom: 1.5rem;
+      color: $accent-text;
+    }
+
+    .socialContainer {
+      display: flex;
+      justify-content: space-between;
+
+      svg {
+        width: 1.25rem;
+        height: 1.25rem;
+        fill: $accent-text;
+      }
+    }
+  }
+
+  .textContainer {
+    margin-right: 1.5rem;
+
+    h3 {
+      color: $accent-text;
+      font-size: 1rem;
+    }
+
+    ul {
+      li {
+        color: $accent-text;
+        font-size: .875rem;
+      }
+    }
   }
 }
