@@ -4,6 +4,7 @@
 import { useState } from "react";
 import { Button, TabButton } from "@components/Buttons";
 import { SearchBar } from "@components/SearchBar/index";
+import RecentSearches from "@components/RecentSearches";
 import DestinationCard from "@components/DestinationCard/index";
 import { destinationsArray } from "../components/DestinationCard/destinations";
 
@@ -16,6 +17,7 @@ export default function Home() {
   const [mode, SetMode] = useState("flight");
   const [flightTabActive, SetFlight] = useState(true);
   const [hotelTabActive, SetHotel] = useState(false);
+  const [loggedIn, SetLoggedIn] = useState(false);
 
   function changeToFlightMode() {
     if (!flightTabActive) {
@@ -52,7 +54,12 @@ export default function Home() {
           </div>
           <h1>RouteMaze</h1>
           <div className={styles.accountContainer}>
-            <Button>Login</Button>
+            <Button
+              handleClick={() => {
+                SetLoggedIn(true);
+              }}>
+              Login
+            </Button>
             <Button buttonType="white">Register</Button>
           </div>
         </header>
@@ -80,6 +87,7 @@ export default function Home() {
         </div>
         <SearchBar mode={mode} />
       </div>
+      <RecentSearches loggedIn={loggedIn} />
       <div className={styles.destinationContainer}>
         <div className={styles.destinationHeader}>
           <div className="textContainer">

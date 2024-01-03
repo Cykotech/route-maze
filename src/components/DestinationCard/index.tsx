@@ -6,11 +6,10 @@ import { imageMap } from "./destinations";
 import { Destination, ImageMap } from "./destination.types";
 
 export default function DestinationCard({ id, alt, content }: Destination) {
-  const images: ImageMap = imageMap;
   return (
     <div className={styles.card}>
       <Image
-        src={images[id]}
+        src={imageMap[id as keyof ImageMap]}
         alt={alt}
         width={300}
         height={300}></Image>
