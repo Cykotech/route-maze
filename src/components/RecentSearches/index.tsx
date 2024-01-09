@@ -1,9 +1,9 @@
-import DestinationCard from "../DestinationCard";
+import DestinationCard from "../DestinationCards/Small";
 
-import { destinationsArray } from "../DestinationCard/destinations";
+import { destinationsArray } from "../DestinationCards/destinations";
 
 import { RecentSearchProps } from "./recent.types";
-import { Destination } from "../DestinationCard/destination.types";
+import { Destination } from "../DestinationCards/Small/destination.types";
 
 import styles from "./recent.module.scss";
 

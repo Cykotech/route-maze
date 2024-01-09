@@ -1,12 +1,13 @@
 /* eslint-disable react/jsx-key */
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { Button, TabButton } from "@components/Buttons";
 import { SearchBar } from "@components/SearchBar/index";
 import RecentSearches from "@components/RecentSearches";
-import DestinationCard from "@components/DestinationCard/index";
-import { destinationsArray } from "../components/DestinationCard/destinations";
+import DestinationCard from "@/components/DestinationCards/Small/index";
+import { destinationsArray } from "../components/DestinationCards/destinations";
 
 import { HotelSVG } from "@/assets/svg/Hotel";
 import { PlaneSVG } from "@/assets/svg/Plane";
@@ -37,20 +38,21 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
-      <div className={styles.test}>
-        <p>Some features may not work as intended during development stage.</p>
-      </div>
       <div className={styles.banner}>
         <header className={styles.header}>
           <div className={styles.linkContainer}>
-            <Button>
-              <PlaneSVG color="black" />
-              Find Flights
-            </Button>
-            <Button>
-              <HotelSVG color="black" />
-              Find Hotels
-            </Button>
+            <Link href="/flights">
+              <Button>
+                <PlaneSVG color="black" />
+                Find Flights
+              </Button>
+            </Link>
+            <Link href="/hotels">
+              <Button>
+                <HotelSVG color="black" />
+                Find Hotels
+              </Button>
+            </Link>
           </div>
           <h1>RouteMaze</h1>
           <div className={styles.accountContainer}>
@@ -87,7 +89,9 @@ export default function Home() {
         </div>
         <SearchBar mode={mode} />
       </div>
-      <RecentSearches loggedIn={loggedIn} />
+      <div className={styles.recentContainer}>
+        <RecentSearches loggedIn={loggedIn} />
+      </div>
       <div className={styles.destinationContainer}>
         <div className={styles.destinationHeader}>
           <div className="textContainer">

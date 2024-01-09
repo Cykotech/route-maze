@@ -23,6 +23,9 @@ export default function RootLayout({
       lang="en"
       className={`${montserrat.variable} ${roboto.variable}`}>
       <body>
+      <div className="test">
+        <p>Some features may not work as intended during development stage.</p>
+      </div>
         {children}
         <footer>
           <div className="companyContainer">

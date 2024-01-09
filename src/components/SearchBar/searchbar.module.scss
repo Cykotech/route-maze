@@ -1,9 +1,11 @@
 @import '../../styles/mixins.scss';
+@import "../../styles/theme.scss";
 
 .searchbar {
   display: flex;
   justify-content: space-evenly;
   margin-top: 3rem;
+  background-color: $background;
 }
 
 .container {

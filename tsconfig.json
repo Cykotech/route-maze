@@ -23,6 +23,6 @@
       "@components/*": ["./src/components/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/util/utilities.ts", "src/components/DestinationCard/imageLoader.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/util/utilities.ts", "src/components/DestinationCards/Small/imageLoader.ts"],
   "exclude": ["node_modules"]
 }

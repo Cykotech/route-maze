@@ -1,26 +1,19 @@
 @import "../styles/theme.scss";
 @import "../styles/mixins.scss";
 
-.test {
-  width: 100%;
-  height: 2.5rem;
-  background-color: orange;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: $background;
 }
 
 
 .banner {
-  background-image: url("../../public/AI-Banner-Image.jpg");
+  background-image: url("../../public/landing-banner.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: 50% 43%;
   width: 98%;
   height: 37rem;
   margin: 0 auto;
@@ -38,6 +31,10 @@
   
     .linkContainer {
       @include buttonContainer;
+
+      a {
+        text-decoration: none;
+      }
     }
   
     .accountContainer {
@@ -91,6 +88,10 @@
       opacity: 50%;
     }
   }
+}
+
+.recentContainer {
+  width: 77rem;
 }
 
 .destinationContainer {

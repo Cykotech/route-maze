@@ -1,0 +1,24 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/theme.scss";
+
+.header {
+  width: 100%;
+  padding: 1.31rem 6.5rem;
+  display: flex;
+  justify-content: space-between;
+  background-color: $background;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.linkContainer {
+  @include buttonContainer;
+  width: fit-content;
+}
+
+.accountContainer {
+  @include buttonContainer;
+  padding-left: 6rem;
+}

@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+// import { useEffect } from "react";
 
 import { useSearchBarStore } from "@/stores/searchbarStore";
 
@@ -50,13 +50,13 @@ export const SearchBar = ({ mode }: SearchBarProps) => {
   //   setDate2(minEndDate);
   // }, [today]);
 
-  useEffect(() => {
-    if (direction.id === "oneWay") {
-    }
+  // useEffect(() => {
+  //   if (direction.id === "oneWay") {
+  //   }
 
-    if (direction.id === "roundTrip" || mode === "hotel") {
-    }
-  }, [direction, mode]);
+  //   if (direction.id === "roundTrip" || mode === "hotel") {
+  //   }
+  // }, [direction, mode]);
 
   function buildFlightSearch(
     origin: string,

@@ -4,7 +4,6 @@ import styles from "./button.module.scss";
 export const Button = ({
   children,
   buttonType = "primary",
-
   handleClick,
 }: ButtonProps) => {
   return (
