@@ -3,7 +3,7 @@ import DestinationCard from "../DestinationCards/Small";
 import { destinationsArray } from "../DestinationCards/destinations";
 
 import { RecentSearchProps } from "./recent.types";
-import { Destination } from "../DestinationCards/Small/destination.types";
+import { Destination } from "../DestinationCards/destination.types";
 
 import styles from "./recent.module.scss";
 

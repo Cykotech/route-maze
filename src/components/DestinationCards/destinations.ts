@@ -1,4 +1,4 @@
-import { Destination } from "./Small/destination.types";
+import { Destination } from "./destination.types";
 
 import newYorkSmall from "../../assets/images/newYorkSmall.jpg";
 import newYorkLarge from "../../assets/images/newYorkLarge.jpg";
@@ -32,13 +32,13 @@ export const destinationsArray: Destination[] = [
 ];
 
 export const imageMap = {
-  newYork: { newYorkSmall, newYorkLarge },
-  paris: { parisSmall, parisLarge },
-  tokyo: { tokyoSmall, tokyoLarge },
-  london: { londonSmall, londonLarge },
-  rome: { romeSmall, romeLarge },
-  barcelona: { barcelonaSmall, barcelonaLarge },
-  sydney: { sydneySmall, sydneyLarge },
-  dubai: { dubaiSmall, dubaiLarge },
-  bali: { baliSmall, baliLarge },
+  newYork: [newYorkSmall, newYorkLarge],
+  paris: [parisSmall, parisLarge],
+  tokyo: [tokyoSmall, tokyoLarge],
+  london: [londonSmall, londonLarge],
+  rome: [romeSmall, romeLarge],
+  barcelona: [barcelonaSmall, barcelonaLarge],
+  sydney: [sydneySmall, sydneyLarge],
+  dubai: [dubaiSmall, dubaiLarge],
+  bali: [baliSmall, baliLarge],
 };

@@ -17,7 +17,6 @@ export default function Header({ activeMode }: HeaderProps) {
   if (activeMode === "flight") {
     flightMode = true;
     hotelMode = false;
-    console.log(flightMode);
   }
 
   if (activeMode === "hotel") {

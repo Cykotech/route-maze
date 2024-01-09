@@ -1,17 +1,16 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import styles from "./destination.module.scss";
 
 import { imageMap } from "../destinations";
 
-import { Destination, ImageMap } from "./destination.types";
+import { Destination, ImageMap } from "../destination.types";
 
 export default function DestinationCard({ id, alt, content }: Destination) {
-  const imageKey = id + "Small";
 
   return (
     <div className={styles.card}>
       <Image
-        src={imageMap[id as keyof ImageMap][imageKey]}
+        src={imageMap[id as keyof ImageMap][0]}
         alt={alt}
         width={300}
         height={300}></Image>
