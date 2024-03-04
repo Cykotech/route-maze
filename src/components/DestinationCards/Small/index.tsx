@@ -1,4 +1,4 @@
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import styles from "./destination.module.scss";
 
 import { imageMap } from "../destinations";

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Button } from "../../Buttons";
 
 import { Destination, ImageMap } from "../destination.types";

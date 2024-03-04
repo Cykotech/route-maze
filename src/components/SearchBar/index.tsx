@@ -1,4 +1,5 @@
 // import { useEffect } from "react";
+import Select from "react-select";
 
 import { useSearchBarStore } from "@/stores/searchbarStore";
 
@@ -96,10 +97,16 @@ export const SearchBar = ({ mode }: SearchBarProps) => {
     tempHotelSearchAlert(mode, hotelSearch);
   }
 
+  const directionOptions = [
+    { value: "oneWay", label: "One Way" },
+    { value: "roundTrip", label: "Round Trip" },
+  ];
+
   if (mode === "flight") {
     return (
       <>
         <div className={styles.searchbar}>
+          <Select options={directionOptions} />
           <TextField
             placeholder="NYC, New York"
             id="origin"
@@ -119,6 +126,7 @@ export const SearchBar = ({ mode }: SearchBarProps) => {
             direction={direction}
             setDirection={updateDirection}
           />
+
           <TextField
             placeholder="1/1/2023"
             id="date1"
